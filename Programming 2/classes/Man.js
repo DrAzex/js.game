@@ -1,10 +1,7 @@
-class Man{
+class Man extends LivingCreature{ 
 
     constructor(x, y, id, matrix, objectsMatrix) {
-        this.x = x;
-        this.y = y;
-        this.id = id;
-        this.matrix = matrix;
+        super(x,y,id,matrix)
         this.objectsMatrix = objectsMatrix;
         this.energy = 18;
         this.updateCoordimates();

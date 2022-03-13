@@ -1,23 +1,10 @@
-class Grass {
+class Grass extends LivingCreature{
 
     constructor(x, y, id, matrix, objectsMatrix) {
-        this.x = x;
-        this.y = y;
-        this.id = id;
-        this.matrix = matrix;
+        super(x,y,id,matrix)
         this.objectsMatrix = objectsMatrix;
         this.energy = 0;
-        this.directions = [
-            [this.x - 1, this.y - 1],
-            [this.x, this.y - 1],
-            [this.x + 1, this.y - 1],
-            [this.x - 1, this.y],
-            [this.x + 1, this.y],
-            [this.x - 1, this.y + 1],
-            [this.x, this.y + 1],
-            [this.x + 1, this.y + 1]
-        ];
-
+    
 
     }
     chooseCells(characterId) {
