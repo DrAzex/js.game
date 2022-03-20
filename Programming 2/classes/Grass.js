@@ -1,3 +1,5 @@
+module.exports = Grass;
+
 class Grass extends LivingCreature{
 
     constructor(x, y, id, matrix, objectsMatrix) {

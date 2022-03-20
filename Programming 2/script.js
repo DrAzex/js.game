@@ -1,3 +1,15 @@
+const LivingCreature = require("./LivingCreature")
+
+const Dino = require("./classes/Dino");
+
+const Grass = require("./classes/Grass");
+
+const GrassEater = require("./classes/GrassEater");
+
+const Man = require("./classes/Man");
+
+const Predator = require("./classes/Predator");
+
 const matrix = createMatrix(20, 20);
 const objectsMatrix = createObjectsMatrix(matrix);
 const side = 30;

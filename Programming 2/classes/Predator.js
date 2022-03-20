@@ -1,3 +1,5 @@
+module.exports = Predator;
+
 class Predator extends LivingCreature{
 
     constructor(x, y, id, matrix, objectsMatrix) {

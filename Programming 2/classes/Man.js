@@ -1,3 +1,5 @@
+module.exports = Man;
+
 class Man extends LivingCreature{ 
 
     constructor(x, y, id, matrix, objectsMatrix) {

@@ -1,3 +1,5 @@
+module.exports = LivingCreature;
+
 class LivingCreature {
     constructor(x, y, id,matrix){
         this.x = x;

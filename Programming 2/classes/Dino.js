@@ -1,3 +1,5 @@
+module.exports = Dino;
+
 class Dino extends LivingCreature{
 
     constructor(x, y, id, matrix, objectsMatrix) {
@@ -133,3 +135,4 @@ class Dino extends LivingCreature{
 
 
 }
+

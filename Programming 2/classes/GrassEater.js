@@ -1,3 +1,5 @@
+module.exports = GrassEater;
+
 class GrassEater extends LivingCreature {
 
     constructor(x, y, id, matrix, objectsMatrix) {
