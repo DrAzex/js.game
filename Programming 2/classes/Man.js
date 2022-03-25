@@ -1,6 +1,6 @@
-module.exports = Man;
+let LivingCreature = require("./LivingCreature")
 
-class Man extends LivingCreature{ 
+module.exports = class Man extends LivingCreature{ 
 
     constructor(x, y, id, matrix, objectsMatrix) {
         super(x,y,id,matrix)

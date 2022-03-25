@@ -1,18 +1,7 @@
-const LivingCreature = require("./LivingCreature")
-
-const Dino = require("./classes/Dino");
-
-const Grass = require("./classes/Grass");
-
-const GrassEater = require("./classes/GrassEater");
-
-const Man = require("./classes/Man");
-
-const Predator = require("./classes/Predator");
-
 const matrix = createMatrix(20, 20);
 const objectsMatrix = createObjectsMatrix(matrix);
 const side = 30;
+const socket = io();
 
 function setup() {
     createCanvas(matrix[0].length * side, matrix.length * side);
@@ -26,39 +15,8 @@ function draw() {
     updateObjectsMatrix(objectsMatrix);
 }
 
+io.socket.on('display message',newMatrix)
 
-
-
-function createMatrix(horizontaLength, verticalLength) {
-    const newMatrix = [];
-
-    for (let y = 0; y < verticalLength; y++) {
-        newMatrix[y] = [];
-        for (let x = 0; x < horizontaLength; x++) {
-            const randonSectionCursor = Math.random() * 100;
-
-            if (randonSectionCursor < 20) {
-                newMatrix[y][x] = 1;
-
-
-            } else if (randonSectionCursor < 30) {
-                newMatrix[y][x] = 2;
-
-            } else if (randonSectionCursor < 40) {
-                newMatrix[y][x] = 3;
-            } else if (randonSectionCursor < 50) {
-                newMatrix[y][x] = 4;
-            } else if (randonSectionCursor < 60) {
-                newMatrix[y][x] = 5;
-            } else {
-                newMatrix[y][x] = 0;
-            }
-
-        }
-
-    }
-    return newMatrix;
-}
 function drawMatrix(matrix) {
     for (let y = 0; y < matrix.length; y++) {
         for (let x = 0; x < matrix[y].length; x++) {
@@ -81,34 +39,9 @@ function drawMatrix(matrix) {
     }
 
 }
-function createObjectsMatrix(matrix) {
-    const newObjectsMatrix = [];
 
-    for (let y = 0; y < matrix.length; y++) {
-        newObjectsMatrix[y] = [];
-        for (let x = 0; x < matrix[y].length; x++) {
-            if (matrix[y][x] === 1) {
-                const newGrass = new Grass(x, y, 1, matrix, newObjectsMatrix);
-                newObjectsMatrix[y][x] = newGrass;
-            } else if (matrix[y][x] === 2) {
-                const newGrassEater = new GrassEater(x,y, 2 , matrix,newObjectsMatrix);
-                newObjectsMatrix[y][x] = newGrassEater;
-            } else if (matrix[y][x] === 3) {
-                const newPredator = new Predator(x,y,3,matrix,newObjectsMatrix);
-                newObjectsMatrix[y][x] = newPredator;
-            } else if (matrix[y][x] === 4) {
-                const newMan = new Man(x,y,4,matrix,newObjectsMatrix);
-                newObjectsMatrix[y][x] = newMan;
-            } else if (matrix[y][x] === 5) {
-                const newDino = new Dino(x,y,5,matrix,newObjectsMatrix);
-                newObjectsMatrix[y][x] = newDino; 
-            } else {
-                newObjectsMatrix[y][x] = null;
-            }
-        }
-    }
-    return newObjectsMatrix;
-}
+io.socket.on('display message',matrix)
+
 function updateObjectsMatrix(matrix) {
     for (let y = 0; y < matrix.length; y++) {
         for (let x = 0; x < matrix[y].length; x++) {

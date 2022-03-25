@@ -1,6 +1,6 @@
-module.exports = Dino;
+let LivingCreature = require("./LivingCreature")
 
-class Dino extends LivingCreature{
+module.exports = class Dino extends LivingCreature{
 
     constructor(x, y, id, matrix, objectsMatrix) {
         super(x,y,id,matrix)
